@@ -1,23 +1,13 @@
 <?php
 class Header
 {
-    private $logo;
     private $title;
-    private $icons;
     private $home;
 
     //-------------------------------------------------------------------------------------
-    private function setLogo($logo)
-    {
-        $this->logo = $logo;
-    }
     private function setTitle($title)
     {
         $this->title = $title;
-    }
-    private function setIcons($icons)
-    {
-        $this->icons = $icons;
     }
     private function setHome($home)
     {
@@ -25,17 +15,9 @@ class Header
     }
 
     //-------------------------------------------------------------------------------------
-    public function getLogo()
-    {
-        return $this->logo;
-    }
     public function getTitle()
     {
         return $this->title;
-    }
-    public function getIcons()
-    {
-        return $this->icons;
     }
     public function getHome()
     {
@@ -43,17 +25,15 @@ class Header
     }
 
     //-------------------------------------------------------------------------------------
-    public function __construct($logo, $title, $icons, $home)
+    public function __construct($title, $home)
     {
-        $this->setLogo($logo);
         $this->setTitle($title);
-        $this->setIcons($icons);
         $this->setHome($home);
     }
 
     //-------------------------------------------------------------------------------------
     public function setHeader()
     {
-        return "<header><img src=" . $this->getLogo() . " class=\"logo\"><h2>" . $this->getTitle() . "</h2></header>";
+        return "<header class=\"header-user\"><p id=\"menu\"><img draggable=\"false\" src=\"assets/menu-outline.svg\" alt=\"menu\" class=\"icons\"></p><p>Logo aqui</p><a draggable=\"false\" href=\"".$this->getHome()."\"><img draggable=\"false\" src=\"assets/home-sharp.svg\" alt=\"home\" class=\"icons\"> Home</a><p><img draggable=\"false\" src=\"assets/person-circle-sharp.svg\" alt=\"user\" class=\"icons user\">".$this->getTitle()."</p><p><img draggable=\"false\" src=\"assets/notifications-sharp.svg\" alt=\"notificações\" class=\"icons\"> Notificações</p></header>";
     }
 }
