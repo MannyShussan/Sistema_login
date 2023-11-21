@@ -10,5 +10,5 @@ botao.addEventListener('click', function () {
 })
 
 function temClasse(el, classe) {
-    return !!(el.className.split(' ').indexOf(classe) + 1);
+    return (el.className.split(' ').indexOf(classe) + 1);
 }
