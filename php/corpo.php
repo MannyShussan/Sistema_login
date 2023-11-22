@@ -47,24 +47,21 @@ class Corpo
                 for ($j = 0; $j < count($res); $j++) {
                     $saida .= "<div class=\"disp ";
                     $saida .= $res[$j]["tipo"] . "-" . ($res[$j]["estado"] == 1 ? "on" : "off") . "\">\n";
-                    $saida .= "<h3>" . $res[$j]["tipo"] . " - " . $j + 1 . "</h3>\n<p>Corrente: 1.2A</p>\n<p>Consumo mensal: " . $res[$j]["consumo"] . "W</p>\n</div>";
+                    $saida .= "<h3>" . $res[$j]["tipo"] . " - " . $j + 1 . "</h3>\n";
+                    $saida .= "<p>Corrente: 1.2A</p>\n";
+                    $saida .= "<p>Consumo mensal: " . $res[$j]["consumo"] . "W</p>\n</div>";
                 }
-                $saida .= "\n</div>\n";
-                $saida .= "<div class=\"status\">\n\t\t<h2>Status do Comodo</h2>\n\t\t<div class=\"status-container\">\n\t\t\t<p>Temperatura ambiente: 26°C</p>\n\t\t\t<p>Umidade: 50%</p>\n\t\t\t<p>Luminosidade: Clara</p>\n\t\t</div>\n\t</div>";
+                $saida .= "\n</div>";
+                $saida .= "\n<div class=\"status\">\n";
+                $saida .= "\t\t<h2>Status do Comodo</h2>";
+                $saida .= "\n\t\t<div class=\"status-container\">";
+                $saida .= "\n\t\t\t<p>Temperatura ambiente: 26°C</p>";
+                $saida .= "\n\t\t\t<p>Umidade: 50%</p>";
+                $saida .= "\n\t\t\t<p>Luminosidade: Clara</p>";
+                $saida .= "\n\t\t</div>\n\t</div>";
             }
             $saida .= "\n</section>\n";
             return $saida;
         }
-    }
-
-    private function constructBody()
-    {
-        return <<< HERE
-        <div class="disp tomada-on">
-                <h3>Tomada - 1</h3>
-                <p>Corrente: 1.2A</p>
-                <p>Consumo mensal: 0.42W</p>
-            </div>        
-        HERE;
     }
 }
