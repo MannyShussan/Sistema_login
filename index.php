@@ -16,6 +16,7 @@
 <body>
     <?php
     $header = new Header("Flávio Miranda", $_SERVER["PHP_SELF"]);
+    $body = new Corpo();
     echo $header->setHeader();
     ?>
     <main class="body-site">
@@ -23,11 +24,9 @@
         $url = $_SERVER["PHP_SELF"];
         echo menuLateral($url);
         ?>
-        <section class="devices">
         <?php 
-        $body = new Corpo();
+        echo $body->setBody();
         ?>
-        </section>
     </main>
 
     <script src="scripts/menu.js"></script>

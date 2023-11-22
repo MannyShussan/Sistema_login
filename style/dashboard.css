@@ -184,53 +184,53 @@ header,
     cursor: default;
 }
 
-.tomada-on {
+.Tomada-on {
     background: var(--color-10-);
     border-bottom: 6px solid var(--color-11-);
     border-right: 3px solid var(--color-11-);
 }
 
-.tomada-on:active {
+.Tomada-on:active {
     border-bottom: 2px solid var(--color-11-);
     border-right: 1px solid var(--color-11-);
 }
 
-.tomada-off {
+.Tomada-off {
     border-bottom: 6px solid var(--color-5-);
     border-right: 3px solid var(--color-5-);
 }
 
-.tomada-off:active {
+.Tomada-off:active {
     border-bottom: 2px solid var(--color-5-);
     border-right: 1px solid var(--color-5-);
 }
 
-.interruptor-on {
+.Interruptor-on {
     background: var(--color-8-);
     border-bottom: 6px solid var(--color-7-);
     border-right: 3px solid var(--color-7-);
 }
 
-.interruptor-off {
+.Interruptor-off {
     background: var(--color-6-);
     border-bottom: 6px solid var(--color-9-);
     border-right: 3px solid var(--color-9-);
 }
 
-.interruptor-on:active {
+.Interruptor-on:active {
     border-bottom: 2px solid var(--color-7-);
     border-right: 1px solid var(--color-7-);
 }
 
-.interruptor-off:active {
+.Interruptor-off:active {
     border-bottom: 2px solid var(--color-9-);
     border-right: 1px solid var(--color-9-);
 }
 
-.interruptor-off:active,
-.interruptor-on:active,
-.tomada-on:active,
-.tomada-off:active {
+.Interruptor-off:active,
+.Interruptor-on:active,
+.Tomada-on:active,
+.Tomada-off:active {
     margin-top: 4px;
     margin-left: 2px;
 }
@@ -243,7 +243,7 @@ header,
     background: var(--color-2-);
     color: var(--color-5-);
     padding: 20px 80px 60px;
-    width: 70%;
+    width: 85%;
     border-radius: 30px;
     border-bottom: 8px solid var(--color-1-);
     border-right: 4px solid var(--color-1-);

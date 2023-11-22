@@ -12,22 +12,33 @@ function requestDevices()
     return $colunm;
 }
 
-function filter($filter, $array){
+function filter($filter, $array)
+{
     $filtro[0] = 0;
-        for ($i = 0; $i < sizeof($array); $i++) {
-            if ($i === 0) {
-                $filtro[0] = $array[$i]["$filter"];
-            } else {
-                $achado = false;
-                for ($j = 0; $j < sizeof($filtro); $j++) {
-                    if ($array[$i]["$filter"] === $filtro[$j]) {
-                        $achado = true;
-                    }
-                }
-                if (!$achado) {
-                    $filtro[] = $array[$i]["$filter"];
+    for ($i = 0; $i < sizeof($array); $i++) {
+        if ($i === 0) {
+            $filtro[0] = $array[$i]["$filter"];
+        } else {
+            $achado = false;
+            for ($j = 0; $j < sizeof($filtro); $j++) {
+                if ($array[$i]["$filter"] === $filtro[$j]) {
+                    $achado = true;
                 }
             }
+            if (!$achado) {
+                $filtro[] = $array[$i]["$filter"];
+            }
         }
-        return $filtro;
+    }
+    return $filtro;
+}
+
+function find($find, $array, $nome)
+{
+    for ($i = 0; $i < sizeof($array); $i++) {
+        if ($array[$i]["$nome"] == $find) {
+            $retorno[] = $array[$i];
+        }
+    }
+    return $retorno;
 }
