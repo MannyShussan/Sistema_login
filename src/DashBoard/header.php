@@ -1,4 +1,5 @@
 <?php
+namespace src\DashBoard\Header;
 class Header
 {
     private $title;
@@ -38,11 +39,11 @@ class Header
         $titulo = $this->title;
         return <<< HEADER
             <header class="header-user">
-                    <p id="menu"><img draggable="false" src="assets/menu-outline.svg" alt="menu" class="icons"></p>
+                    <p id="menu"><img draggable="false" src="../../assets/menu-outline.svg" alt="menu" class="icons"></p>
                     <p>Logo aqui</p>
-                    <a draggable="false" href="$home"><img draggable="false" src="assets/home-sharp.svg" alt="home" class="icons"> Home</a>
-                    <p><img draggable="false" src="assets/person-circle-sharp.svg" alt="user" class="icons user">$titulo</p>
-                    <p><img draggable="false" src="assets/notifications-sharp.svg" alt="notificaçõe" class="icons"> Notificações</p>
+                    <a draggable="false" href="$home"><img draggable="false" src="../../assets/home-sharp.svg" alt="home" class="icons"> Home</a>
+                    <p><img draggable="false" src="../../assets/person-circle-sharp.svg" alt="user" class="icons user">$titulo</p>
+                    <p><img draggable="false" src="../../assets/notifications-sharp.svg" alt="notificaçõe" class="icons"> Notificações</p>
                 </header>
 
         HEADER;

@@ -1,4 +1,94 @@
+@import url(colors.css);
 
-.logo{
-    width: 40px;
+body {
+    font-family: var(--fonte);
+    display: flex;
+    justify-content: center;
+    margin: 30vh auto;
+    background: var(--background-gradiente);
+    overflow-y: hidden;
+}
+
+.login {
+    background: var(--color-2-);
+    border-radius: 20px;
+    color: var(--background);
+    border-bottom: 10px solid var(--color-1-);
+    border-right: 6px solid var(--color-1-);
+    box-shadow: var(--sombra);
+}
+
+.login {
+    padding: 2em;
+}
+
+.campo {
+    width: 250px;
+    height: 250px;
+    border: none;
+}
+
+.campo legend {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.formulario input[type=text],
+.formulario input[type=password] {
+    padding: 5px 5px 5px 20px;
+    width: 18em;
+    border-radius: 5px;
+    border: none;
+    color: var(--color-1-);
+}
+
+.formulario input[type=submit]:not(:disabled) {
+    margin-top: 15px;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1em;
+    background: var(--color-12-);
+    border: none;
+    border-radius: 10px;
+    color: var(--background);
+    border-bottom: 6px solid var(--color-13-);
+    border-right: 3px solid var(--color-13-);
+    transition: all .3s ease-in-out;
+}
+
+.formulario input[type=submit]:hover:not(:disabled) {
+    color: white;
+}
+
+.formulario input[type=submit]:active:not(:disabled) {
+    margin-top: 16px;
+    margin-left: 1px;
+    border-bottom: 3px solid var(--color-13-);
+    border-right: 1px solid var(--color-13-);
+    padding-top: 2px;
+    color: var(--color-1-);
+    transition: all .3s ease-in-out;
+}
+
+.formulario input[type=submit]:disabled {
+    margin-top: 16px;
+    margin-left: 1px;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1em;
+    background: var(--color-14-);
+    border: none;
+    border-radius: 10px;
+    color: var(--background);
+    border-bottom: 3px solid var(--color-15-);
+    border-right: 1px solid var(--color-15-);
+    transition: all .3s ease-in-out;
 }
