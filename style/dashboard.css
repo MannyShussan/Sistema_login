@@ -83,6 +83,7 @@ header a:active {
     box-shadow: var(--sombra);
     height: 95.6vh;
     position: fixed;
+    transition: all .5s ease-in-out;
 }
 
 header,
@@ -217,7 +218,8 @@ header,
 }
 
 .sumir {
-    display: none;
+    margin-left: -200px;
+    transition: all .5s ease-in-out;
 }
 
 .status {

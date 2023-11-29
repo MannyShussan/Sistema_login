@@ -42,3 +42,26 @@ function find($find, $array, $nome)
     }
     return $retorno;
 }
+
+function checkPassword($user, $pass)
+{
+    $conn = new mysqli('localhost', 'root', '', 'iot');
+    if ($conn->connect_error) {
+        die('' . $conn->connect_error);
+    }
+    $query = $conn->query("SELECT * FROM users WHERE email = '$user';");
+    if ($query->num_rows > 0) {
+        $row = $query->fetch_assoc();
+        $passHash = $row["senha"];
+        if (password_verify($pass, $passHash)) {
+            $row['senha'] = '';
+            $conn->close();
+            return $row;
+        } else {
+            $conn->close();
+            return false;
+        }
+    }
+    $conn->close();
+    return false;
+}

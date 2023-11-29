@@ -34,6 +34,7 @@ if (isset($_GET["token"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Inicial</title>
     <link rel="stylesheet" href="../../style/dashboard.css">
+    <link rel="shortcut icon" href="../../assets/finger-print.svg" type="image/x-icon">
 </head>
 
 <body>
@@ -52,7 +53,7 @@ if (isset($_GET["token"])) {
         ?>
     </main>
 
-    <script src="scripts/menu.js"></script>
+    <script src="../../scripts/menu.js"></script>
 </body>
 
 </html>
