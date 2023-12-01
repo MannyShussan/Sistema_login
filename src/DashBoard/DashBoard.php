@@ -45,8 +45,8 @@ if (isset($_GET["token"])) {
     ?>
     <main class="body-site">
         <?php
-        $url = $_SERVER["PHP_SELF"];
-        echo menuLateral($url);
+        echo logout();
+        echo menuLateral();
         ?>
         <?php
         echo $body->setBody();
@@ -54,6 +54,7 @@ if (isset($_GET["token"])) {
     </main>
 
     <script src="../../scripts/menu.js"></script>
+    <script src="../../scripts/dispositivos.js"></script>
 </body>
 
 </html>

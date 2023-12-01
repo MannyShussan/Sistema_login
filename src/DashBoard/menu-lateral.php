@@ -1,19 +1,31 @@
 <?php
-function menuLateral($url)
+function menuLateral()
 {
     return <<< MENU
-<form action="$url" method="get" class="right-menu" id="lateral">
-            <input type="submit" class="button" value="Perfil" name="pg">
-            <input type="submit" class="button" value="DashBoard" name="pg">
-            <input type="submit" class="button" value="Mídia" name="pg">
-            <input type="submit" class="button" value="Páginas" name="pg">
-            <input type="submit" class="button" value="Comentários" name="pg">
-            <input type="submit" class="button" value="Aparência" name="pg">
-            <input type="submit" class="button" value="Plugins" name="pg">
-            <input type="submit" class="button" value="Usuários" name="pg">
-            <input type="submit" class="button" value="Configuração" name="pg">
-            <input type="submit" class="button" value="Ajuda" name="pg">
-        </form>
+<div class="right-menu sumir" id="lateral">
+            <a class="button">Perfil</a>
+            <a class="button">DashBoard</a>
+            <a class="button">Mídia</a>
+            <a class="button">Páginas</a>
+            <a class="button">Comentários</a>
+            <a class="button">Aparência</a>
+            <a class="button">Plugins</a>
+            <a class="button">Usuários</a>
+            <a class="button">Configuração</a>
+            <a class="button">Ajuda</a>
+        </div>
 
 MENU;
+}
+
+function logout()
+{
+    return <<<LOGOUT
+        <nav id="menu-1" class="ocultar">
+                <ul>
+                    <li><img src="../../assets/log-out-outline.svg" alt="" class="icons"> Logout</li>
+                </ul>
+            </nav>
+
+    LOGOUT;
 }

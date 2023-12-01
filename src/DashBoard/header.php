@@ -42,7 +42,7 @@ class Header
                     <p id="menu"><img draggable="false" src="../../assets/menu-outline.svg" alt="menu" class="icons"></p>
                     <p>Logo aqui</p>
                     <a draggable="false" href="$home"><img draggable="false" src="../../assets/home-sharp.svg" alt="home" class="icons"> Home</a>
-                    <p><img draggable="false" src="../../assets/person-circle-sharp.svg" alt="user" class="icons user">$titulo</p>
+                    <p id="user"><img draggable="false" src="../../assets/person-circle-sharp.svg" alt="user" class="icons user">$titulo</p>
                     <p><img draggable="false" src="../../assets/notifications-sharp.svg" alt="notificaçõe" class="icons"> Notificações</p>
                 </header>
 

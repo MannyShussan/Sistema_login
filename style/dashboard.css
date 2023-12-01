@@ -90,6 +90,7 @@ header,
 .right-menu,
 .button {
     color: var(--color-5-);
+    z-index: 9;
 }
 
 .icons {
@@ -106,7 +107,7 @@ header,
     margin-left: -50px;
     background: var(--color-1-);
     padding: 20px 20px 20px 30px;
-    width: 190px;
+    width: 138px;
     cursor: pointer;
     font-size: 1.1em;
 }
@@ -119,7 +120,7 @@ header,
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     box-shadow: 5px 10px 10px #3b3b3b7e;
-    width: 200px;
+    width: 135px;
     transition: all .3s ease-in;
 }
 
@@ -217,8 +218,61 @@ header,
     margin-left: 2px;
 }
 
+.Interruptor-off,
+.Interruptor-on,
+.Tomada-on,
+.Tomada-off {
+    cursor: pointer;
+    transition: all 1.2s ease-in-out;
+}
+
 .sumir {
-    margin-left: -200px;
+    margin-left: -220px;
+    transition: all .5s ease-in-out;
+}
+
+#menu-1 {
+    position: fixed;
+    z-index: 8;
+    left: 305px;
+    top: 50px;
+    background: var(--color-1-);
+    color: var(--color-5-);
+    width: 150px;
+    transition: all .5s ease-in-out;
+}
+
+#menu-1 ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#menu-1 ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 30px;
+    padding: 8px 0 12px;
+    cursor: pointer;
+}
+
+#menu-1 ul li:hover {
+    background: var(--color-6-);
+    border-bottom: 8px solid var(--color-9-);
+    padding: 10px 0 4px;
+}
+
+#menu-1 ul li:active {
+    border-bottom: 2px solid var(--color-9-);
+    margin-top: 6px;
+}
+
+.ocultar {
+    margin-top: -60px;
     transition: all .5s ease-in-out;
 }
 

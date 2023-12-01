@@ -43,7 +43,7 @@ class Corpo
             $res = find($this->comodos[$i], $this->result, "nome");
             for ($j = 0; $j < count($res); $j++) {
                 $saida .= "<div class=\"disp ";
-                $saida .= $res[$j]["tipo"] . "-" . ($res[$j]["estado"] == 1 ? "on" : "off") . "\">\n";
+                $saida .= $res[$j]["tipo"] . "-" . ($res[$j]["estado"] == 1 ? "on" : "off") . "\" id=\"".$res[$j]["id"]."\">\n";
                 $saida .= "<h3>" . $res[$j]["tipo"] . " - " . $j + 1 . "</h3>\n";
                 $saida .= "<p>Corrente: 1.2A</p>\n";
                 $saida .= "<p>Consumo mensal: " . $res[$j]["consumo"] . "W</p>\n</div>";
