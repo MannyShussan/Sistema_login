@@ -39,7 +39,7 @@ if (isset($_GET["token"])) {
 
 <body>
     <?php
-    $header = new Header($_SESSION["user"], $_SERVER["PHP_SELF"]);
+    $header = new Header($_SESSION["user"], "DashBoard.php");
     $body = new Corpo();
     echo $header->setHeader();
     ?>
