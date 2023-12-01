@@ -14,7 +14,7 @@ body {
 }
 
 header,
-.body-site {
+main {
     display: flex;
     flex-direction: row;
 }
@@ -69,7 +69,7 @@ header a:active {
     border-bottom: 2px solid var(--color-9-);
 }
 
-.body-site {
+main {
     gap: 3%;
 }
 
@@ -223,7 +223,7 @@ header,
 .Tomada-on,
 .Tomada-off {
     cursor: pointer;
-    transition: all 1.2s ease-in-out;
+    transition: all .1s ease-in-out;
 }
 
 .sumir {

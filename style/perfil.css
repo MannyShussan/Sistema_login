@@ -1,0 +1,36 @@
+@import url(colors.css);
+
+.container-perfil,
+.container-campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-perfil {
+    justify-content: center;
+    align-items: center;
+    margin: 90px auto 0 auto;
+}
+
+.container-info {
+    width: 60vw;
+    background: var(--color-16-);
+    color: var(--color-1-);
+    padding: 4em;
+    border: 1px solid var(--color-14-);
+    border-radius: 10px;
+    font-size: 1.3em;
+}
+
+.container-campo {
+    margin-top: 20px;
+    gap: 5px;
+}
+
+.container-campo input{
+    height: 30px;
+    font-size: 1em;
+    padding-left: 20px;
+    border-radius: 15px;
+    border: none;
+}

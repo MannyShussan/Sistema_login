@@ -7,7 +7,15 @@ $oculto = 'oculto';
 if (isset($_POST["user"]) && isset($_POST["password"]) && ($password != '') && ($user != '')) {
     $log = checkPassword($user, $password);
     if ($log) {
-        $token = createToken($log["nome"], $log["ID"], 60 * 60);
+        $token = createToken($log["user"], $log["ID"]);
+        session_start();
+        $_SESSION["user"] = $log['user'];
+        $_SESSION["nome"] = $log['nome'];
+        $_SESSION["id"] = $log['ID'];
+        $_SESSION["sobrenome"] = $log['sobrenome'];
+        $_SESSION["nivel"] = $log['nivel'];
+        $_SESSION["email"] = $log['email'];
+        $_SESSION["token"] = $token;
         header("location: src/DashBoard/DashBoard.php?token=$token");
     } else {
         $oculto = '';

@@ -1,10 +1,12 @@
 <?php
-function menuLateral()
+function menuLateral($num=false)
 {
+    $sessao = $_SESSION["token"];
+    $class = $num?"":"sumir";
     return <<< MENU
-<div class="right-menu sumir" id="lateral">
-            <a class="button">Perfil</a>
-            <a class="button">DashBoard</a>
+<div class="right-menu $class" id="lateral">
+            <a class="button" href="Perfil.php?token=$sessao">Perfil</a>
+            <a class="button" href="DashBoard.php?token=$sessao">DashBoard</a>
             <a class="button">Mídia</a>
             <a class="button">Páginas</a>
             <a class="button">Comentários</a>

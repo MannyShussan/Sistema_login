@@ -10,13 +10,10 @@ require_once("../token.php");
 if (isset($_GET["token"])) {
     $token = $_GET["token"];
     $validToken = validToken($token);
-    if ($validToken == false || $validToken->exp <= time()) {
+    if ($validToken == false) {
         header("location: ../../index.php");
     }
     session_start();
-    $_SESSION["user"] = $validToken->user;
-    $_SESSION["id"] = $validToken->id;
-    $_SESSION["exp"] = $validToken->exp;
     $_SESSION["token"] = $token;
 } else {
     header("location: ../../index.php");
@@ -32,21 +29,21 @@ if (isset($_GET["token"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Inicial</title>
+    <title>DashBoard</title>
     <link rel="stylesheet" href="../../style/dashboard.css">
-    <link rel="shortcut icon" href="../../assets/finger-print.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../../assets/DashBoard.svg" type="image/x-icon">
 </head>
 
 <body>
     <?php
-    $header = new Header($_SESSION["user"], "DashBoard.php");
+    $header = new Header($_SESSION["user"], "DashBoard.php?token=$token");
     $body = new Corpo();
     echo $header->setHeader();
     ?>
     <main class="body-site">
         <?php
         echo logout();
-        echo menuLateral();
+        echo menuLateral(true);
         ?>
         <?php
         echo $body->setBody();

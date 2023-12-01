@@ -1,7 +1,8 @@
 <?php
 require_once("chave.php");
-function createToken(string $user, string $id, int $duracao): string
+function createToken(string $user, string $id): string
 {
+    $duracao = duracaoSessao();
     $secretkey = chave();
     $header = base64_encode(json_encode(['alg' => 'HS256', 'typ' => 'JWT']));
     $payload = base64_encode(json_encode(['exp' => (time() + $duracao), 'id' => "$id", 'user' => $user]));
@@ -21,4 +22,13 @@ function validToken(string $token)
         return $valid;
     }
     return false;
+}
+
+function verificaToken($token)
+{
+    $validToken = validToken($token);
+    if ($validToken->exp <= time()) {
+        return false;
+    }
+    return $validToken;
 }
