@@ -1,18 +1,19 @@
 <?php
-function menuLateral($num=false)
+function menuLateral($num = false, $nivel = 1)
 {
     $sessao = $_SESSION["token"];
-    $class = $num?"":"sumir";
+    $class = $num ? "" : "sumir";
+    if ($nivel >= 1) {
+        $adm = "";
+    } else {
+        $adm = "<a class=\"button\" href=\"Usuarios.php?token={$_SESSION['token']}\">Usuários</a>";
+    }
     return <<< MENU
 <div class="right-menu $class" id="lateral">
             <a class="button" href="Perfil.php?token=$sessao">Perfil</a>
             <a class="button" href="DashBoard.php?token=$sessao">DashBoard</a>
-            <a class="button">Mídia</a>
-            <a class="button">Páginas</a>
-            <a class="button">Comentários</a>
-            <a class="button">Aparência</a>
-            <a class="button">Plugins</a>
-            <a class="button">Usuários</a>
+            <a class="button">Dispositivos</a>
+            $adm
             <a class="button">Configuração</a>
             <a class="button">Ajuda</a>
         </div>
@@ -20,12 +21,12 @@ function menuLateral($num=false)
 MENU;
 }
 
-function logout()
+function logout($index)
 {
     return <<<LOGOUT
         <nav id="menu-1" class="ocultar">
                 <ul>
-                    <li><img src="../../assets/log-out-outline.svg" alt="" class="icons"> Logout</li>
+                    <li><a href="$index" class="lista"><img src="../../assets/log-out-outline.svg" alt="" class="icons"> Logout</a></li>
                 </ul>
             </nav>
 

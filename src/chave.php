@@ -6,5 +6,5 @@ function chave(): string
 
 function duracaoSessao()
 {
-    return 60 * 60 * 10;
+    return 60*60;
 }

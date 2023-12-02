@@ -1,5 +1,4 @@
 <?php
-namespace src\DashBoard\Header;
 class Header
 {
     private $title;

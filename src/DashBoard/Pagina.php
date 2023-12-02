@@ -1,12 +1,11 @@
 <?php
-require_once("../Autoload.php");
+
 require_once("header.php");
 require_once("menu-lateral.php");
 require_once("Token.php");
 require_once("../token.php");
 require_once("Token.php");
 
-use src\DashBoard\Header\Header;
 
 class Pagina
 {
@@ -18,6 +17,7 @@ class Pagina
     protected $token;
     protected $nivel;
     protected $corpo;
+    protected $pagina;
 
     public function getId()
     {
@@ -48,7 +48,7 @@ class Pagina
         return $this->nivel;
     }
 
-    public function __construct($token, $corpo, array $arg)
+    public function __construct($token, $corpo, $pag, array $arg)
     {
         if (validToken($token)) {
             $this->corpo = $corpo;
@@ -58,6 +58,7 @@ class Pagina
             $this->sobreNome = $arg['sobrenome'];
             $this->email = $arg['email'];
             $this->nivel = $arg['nivel'];
+            $this->pagina = $pag;
             $this->token = new Token($this->user, $this->id);
         }
     }
@@ -67,18 +68,8 @@ class Pagina
         $_SESSION['token'] = $this->token->getToken();
     }
 
-    protected function desloga()
-    {
-        unset($_SESSION);
-        header("../../index.php");
-    }
     public function render()
     {
-
-        $verificacao = verificaToken($this->token->getToken());
-        if (!$verificacao) {
-            $this->desloga();
-        }
 ?>
         <!DOCTYPE html>
         <html lang="pt-br">
@@ -86,10 +77,10 @@ class Pagina
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="../../style/DashBoard.css">
-            <link rel="stylesheet" href="../../style/perfil.css">
-            <title>Perfil - <?= $this->user ?></title>
-            <link rel="shortcut icon" href="../../assets/Perfil.svg" type="image/x-icon">
+            <link rel="stylesheet" href="../../style/menu.css">
+            <link rel="stylesheet" href="../../style/<?= $this->pagina ?>.css">
+            <title><?= ucfirst($this->pagina) . " - " . $this->user ?></title>
+            <link rel="shortcut icon" href="../../assets/<?= $this->pagina ?>.svg" type="image/x-icon">
         </head>
 
         <body>
@@ -99,18 +90,30 @@ class Pagina
             ?>
             <main class="body-site">
                 <?php
-                echo logout();
-                echo menuLateral(true);
-                echo $this->corpo;
+                echo logout("../../index.php");
+                echo menuLateral(true, $this->nivel);
                 ?>
+                <section class="main">
+                    <div class="container-main">
+                        <?php
+                        echo $this->corpo;
+                        ?>
+                    </div>
+                </section>
             </main>
 
 
             <script src="../../scripts/menu.js"></script>
+            <?= $this->script() ?>
         </body>
 
         </html>
 
 <?php
+    }
+
+    protected function script()
+    {
+        return "";
     }
 }

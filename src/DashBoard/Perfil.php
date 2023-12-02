@@ -1,7 +1,9 @@
 <?php
 require_once("Pagina.php");
-session_start();
-$token = $_GET['token'] ?? '';
+require_once("init.php");
+
+inicializa($_GET['token']);
+$token = ($_GET['token']);
 $site = <<<EOF
         <section class="container-perfil">
             <form action="{$_SERVER["PHP_SELF"]}" method="post" class="container-info">
@@ -41,5 +43,5 @@ $site = <<<EOF
         </section>
    EOF;
 
-$perfil = new Pagina($token, $site, $_SESSION);
+$perfil = new Pagina($token, $site, 'perfil', $_SESSION);
 $perfil->render();

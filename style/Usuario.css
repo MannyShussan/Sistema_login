@@ -1,0 +1,9 @@
+@import url(colors.css);
+
+.container-user{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 70px;
+    width: 60vw;
+}

@@ -27,7 +27,7 @@ function validToken(string $token)
 function verificaToken($token)
 {
     $validToken = validToken($token);
-    if ($validToken->exp <= time()) {
+    if ($validToken !== false && $validToken->exp <= time()) {
         return false;
     }
     return $validToken;

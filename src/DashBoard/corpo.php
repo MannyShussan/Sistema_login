@@ -1,5 +1,5 @@
 <?php
-namespace src\DashBoard\Corpo;
+
 require_once "../request.php";
 class Corpo
 {
@@ -37,27 +37,35 @@ class Corpo
     public function setBody()
     {
 
-        $saida = "<section class=\"devices\">";
+        $saida = "";
         for ($i = 0; $i < count($this->comodos); $i++) {
-            $saida .= "<h2>Dispositivos - " . $this->comodos[$i] . "</h2>\n<div class=\"container-disp\">";
+            $saida .= "<h2>Dispositivos - {$this->comodos[$i]} </h2>\n<div class=\"container-disp\">";
             $res = find($this->comodos[$i], $this->result, "nome");
             for ($j = 0; $j < count($res); $j++) {
-                $saida .= "<div class=\"disp ";
-                $saida .= $res[$j]["tipo"] . "-" . ($res[$j]["estado"] == 1 ? "on" : "off") . "\" id=\"".$res[$j]["id"]."\">\n";
-                $saida .= "<h3>" . $res[$j]["tipo"] . " - " . $j + 1 . "</h3>\n";
-                $saida .= "<p>Corrente: 1.2A</p>\n";
-                $saida .= "<p>Consumo mensal: " . $res[$j]["consumo"] . "W</p>\n</div>";
+                $result = $res[$j]["estado"] == 1 ? "on" : "off";
+                $soma = $j + 1;
+                $saida .= <<<DOC
+                <div class="disp {$res[$j]["tipo"]}-$result" id="{$res[$j]["id"]}" draggable="true">
+                        <h3> {$res[$j]["tipo"]} - $soma </h3>
+                        <p>Corrente: 1.2A</p>
+                        <p>Consumo mensal: {$res[$j]["consumo"]}W</p>
+                    </div>
+
+                DOC;
             }
-            $saida .= "\n</div>";
-            $saida .= "\n<div class=\"status\">\n";
-            $saida .= "\t\t<h2>Status do Comodo</h2>";
-            $saida .= "\n\t\t<div class=\"status-container\">";
-            $saida .= "\n\t\t\t<p>Temperatura ambiente: 26°C</p>";
-            $saida .= "\n\t\t\t<p>Umidade: 50%</p>";
-            $saida .= "\n\t\t\t<p>Luminosidade: Clara</p>";
-            $saida .= "\n\t\t</div>\n\t</div>";
+            $saida .= <<<DOC
+                </div>
+                    <div class="status">\n
+                        <h2>Status do Comodo</h2>
+                        <div class="status-container">
+                            <p>Temperatura ambiente: 26°C</p>
+                            <p>Umidade: 50%</p>
+                            <p>Luminosidade: Clara</p>
+                        </div>
+                    </div>
+                    
+            DOC;
         }
-        $saida .= "\n</section>\n";
         return $saida;
     }
 }
