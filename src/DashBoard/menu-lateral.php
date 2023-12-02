@@ -12,7 +12,7 @@ function menuLateral($num = false, $nivel = 1)
 <div class="right-menu $class" id="lateral">
             <a class="button" href="Perfil.php?token=$sessao">Perfil</a>
             <a class="button" href="DashBoard.php?token=$sessao">DashBoard</a>
-            <a class="button">Dispositivos</a>
+            <a class="button" href="Dispositivos.php?token=$sessao">Dispositivos</a>
             $adm
             <a class="button">Configuração</a>
             <a class="button">Ajuda</a>

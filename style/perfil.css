@@ -33,3 +33,8 @@
     border-radius: 15px;
     border: none;
 }
+
+.container-campo input[type=submit]{
+    height: 50px;
+    background: var(--color-13-);
+}

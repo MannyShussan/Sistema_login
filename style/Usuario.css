@@ -2,8 +2,55 @@
 
 .container-user{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: auto;
+    margin: 10%;
     margin-top: 70px;
-    width: 60vw;
+    width: 70vw;
+}
+
+.formulario{
+    border: 1px solid var(--color-14-);
+    padding-top: 80px;
+    padding-bottom: 100px;
+    border-radius: 10px;
+    background: var(--color-5-);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.container{
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    gap: 10px;
+    font-size: 1.3em;
+    text-align: left;
+}
+
+.container input{
+    width: 90%;
+    height: 25px;
+    border: none;
+    font-size: 1em;
+    border-radius: 13px;
+    padding-left: 15px;
+}
+
+.container label{
+    width: 90%;
+}
+
+.container input[type=submit]{
+    height: 50px;
+    background: var(--color-13-);
+    
 }

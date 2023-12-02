@@ -4,9 +4,10 @@ require_once("init.php");
 
 inicializa($_GET['token']);
 $token = ($_GET['token']);
+$self = $_SERVER["PHP_SELF"] . "?token=$token";
 $site = <<<EOF
         <section class="container-perfil">
-            <form action="{$_SERVER["PHP_SELF"]}" method="post" class="container-info">
+            <form action="{$self}" method="post" class="container-info">
 
                 <div class="container-campo">
                     <label for="user">Usuário:</label>
